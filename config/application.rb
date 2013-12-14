@@ -58,5 +58,8 @@ module Egadgets
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Don't care about locales
+    config.i18n.enforce_available_locales = false
   end
 end
