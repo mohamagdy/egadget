@@ -22,4 +22,9 @@ group :assets do
   gem 'twitter-bootstrap-rails'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'factory_girl' # Fixture replacement
+end
+
 gem 'jquery-rails'
