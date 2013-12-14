@@ -2,7 +2,8 @@ class GadgetsController < ApplicationController
   # GET /gadgets
   # GET /gadgets.json
   def index
-    @gadgets = Gadget.all
+    filter = params[:search].present? ? { name: params[:search] } : {}
+    @gadgets = Gadget.search(filter)
 
     respond_to do |format|
       format.html # index.html.erb
