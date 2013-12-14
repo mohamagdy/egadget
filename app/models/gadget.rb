@@ -1,6 +1,9 @@
 class Gadget < ActiveRecord::Base
   attr_accessible :name
 
+  # Relations
+  has_many :attachments
+  
   # Searches the gadgets
   # Params:
   # 	filter: a hash of fields need to be search
