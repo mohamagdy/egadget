@@ -24,6 +24,9 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl_rails' # Fixture replacement
+
+  # Test coverage
+  gem 'simplecov', require: false
 end
 
 gem 'jquery-rails'
