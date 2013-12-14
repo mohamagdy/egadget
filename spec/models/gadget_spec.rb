@@ -24,11 +24,11 @@ describe Gadget do
 
 	describe "attachments" do
 		before(:each) do
-			gadget = FactoryGirl.create(:gadget)
+			@gadget = FactoryGirl.create(:gadget)
 		end
 
 		it "should return the gadget images" do
-			gadget.attachments.should be_empty
+			@gadget.attachments.should be_empty
 		end
 	end
 end
