@@ -6,6 +6,9 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @gadget.name %></dd>
+  <% @gadget.attachments.each do |attachment| %>
+    <dd><%= image_tag attachment.image.url %></dd>
+  <% end %> 
 </dl>
 
 <div class="form-actions">
