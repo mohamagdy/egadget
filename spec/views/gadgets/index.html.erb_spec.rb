@@ -15,5 +15,7 @@ describe "gadgets/index" do
       assert_select "tr>td:nth-child(#{1})", text: gadget.id
       assert_select "tr>td:nth-child(#{2})", text: gadget.name
     end
+
+    assert_select "form.form-search", count: 1
   end
 end
