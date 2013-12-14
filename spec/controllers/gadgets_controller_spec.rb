@@ -38,6 +38,16 @@ describe GadgetsController do
     end
   end
 
+  describe "GET index" do
+    it "assigns filtered gadgets as @gadgets" do
+      gadgets = FactoryGirl.create_list(:gadget, 3)
+      gadget = gadgets.first
+
+      get :index, { search: gadget.name}, valid_session
+      expect(assigns(:gadgets)).to include(gadget)
+    end
+  end
+
   describe "GET show" do
     it "assigns the requested gadget as @gadget" do
       gadget = Gadget.create! valid_attributes
