@@ -10,15 +10,15 @@ describe Gadget do
 		it "should return the matching gadgets by name" do
 			gadgets =  Gadget.search({ name: @gadget_name})
 
-			gadget.should_not be_empty
-			gadget.should include(@gadget)
+			gadgets.should_not be_empty
+			gadgets.should include(@gadget)
 		end
 
 		it "should not return any matching gadgets by name" do
 			gadgets =  Gadget.search({ name: "Another Gadget"})
 
-			gadget.should be_empty
-			gadget.should_not include(@gadget)
+			gadgets.should be_empty
+			gadgets.should_not include(@gadget)
 		end
 	end
 end
