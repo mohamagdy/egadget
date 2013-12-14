@@ -11,5 +11,7 @@ describe "gadgets/new" do
     assert_select "form[action=?][method=?]", gadgets_path, "post" do
       assert_select "input#gadget_name[name=?]", "gadget[name]"
     end
+
+    assert_select "a", text: "Add an attachment"
   end
 end
