@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe "gadgets/edit" do
   before(:each) do
-    @gadget = assign(:gadget, stub_model(Gadget,
-      :name => "MyString"
-    ))
+    @gadget = FactoryGirl.create(:gadget)
   end
 
   it "renders the edit gadget form" do

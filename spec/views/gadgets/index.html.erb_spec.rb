@@ -2,19 +2,18 @@ require 'spec_helper'
 
 describe "gadgets/index" do
   before(:each) do
-    assign(:gadgets, [
-      stub_model(Gadget,
-        :name => "Name"
-      ),
-      stub_model(Gadget,
-        :name => "Name"
-      )
-    ])
+    @gadgets = FactoryGirl.create_list(:gadget, 2)
   end
 
   it "renders a list of gadgets" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "Name".to_s, :count => 2
+
+    # The listing table contains 2 columns:
+    # ID: Gadget id
+    # Name: Gadget name
+    @gadgets.each do |gadget|
+      assert_select "tr>td:nth-child(#{1})", text: gadget.id
+      assert_select "tr>td:nth-child(#{2})", text: gadget.name
+    end
   end
 end
